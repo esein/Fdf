@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 05:25:10 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/20 07:06:16 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/27 21:31:52 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,8 @@ char				**ft_strsplit(char const *s, char c);
 
 char				**ft_strsplit_whitespace(char const *s);
 
+int					ft_strsplit_atoi(int	**tab_int, char *s);
+
 char				**ft_parsecmd(char *cmd);
 
 char				*ft_itoa(int n);
@@ -200,7 +202,7 @@ void				ft_putchar_fd(char c, int fd);
 
 void				ft_putstr_fd(char const *s, int fd);
 
-void				ft_puterror(char const *s);
+int					ft_puterror(char const *s);
 
 void				ft_putendl_fd(char const *s, int fd);
 

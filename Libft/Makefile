@@ -6,7 +6,7 @@
 #    By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 05:23:59 by gcadiou           #+#    #+#              #
-#    Updated: 2017/10/20 07:07:00 by gcadiou          ###   ########.fr        #
+#    Updated: 2017/10/27 21:31:14 by gcadiou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,7 @@ SRC = ft_atoi.c       \
 	  ft_free.c             \
 	  ft_strjoin_separator.c\
 	  ft_parsecmd.c         \
+	  ft_strsplit_atoi.c    \
 	  get_next_line.c       \
 	  norme_gnl.c
 

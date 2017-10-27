@@ -6,13 +6,13 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 04:19:16 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/05/15 16:40:12 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/27 18:18:19 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_puterror(char const *s)
+int		ft_puterror(char const *s)
 {
 	int a;
 
@@ -22,4 +22,5 @@ void		ft_puterror(char const *s)
 		ft_putcharerror(s[a]);
 		a++;
 	}
+	return (1);
 }

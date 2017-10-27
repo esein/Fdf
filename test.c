@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/20 10:31:37 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/26 21:25:09 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/27 16:29:29 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ int		main()
 	img.data = mlx_get_data_addr(img.adr, &(img.bpp), &(img.size_line), &(img.endian));
 	pixel.i = 0x00FFFFFF;
 	y = 50;
-//	printf("%u\n", (unsigned int)0x00FFFF00);
-//	printf("%u\n", pixel.i);
-//	printf("%u\n", pixel.tab[2]);
 	while (y < 150)
 	{
 		x = 100;
@@ -39,10 +36,6 @@ int		main()
 		{
 		//	mlx_pixel_put(mlx, win, x, y, pixel.i);
 			put_pixel_to_img(&img, x, y, &pixel);
-			/*string[(y * 400 + x) * (bpp / 8)] = 0xFF;
-			string[(y * 400 + x) * (bpp / 8) + 1] = 0xFF;
-			string[(y * 400 + x) * (bpp / 8) + 2] = 0xFF;
-			string[(y * 400 + x) * (bpp / 8) + 3] = 0x00;*/
 			x++;
 		}
 		y++;
