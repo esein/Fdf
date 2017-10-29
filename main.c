@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 14:25:00 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/27 22:18:00 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/29 17:33:10 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int		main(int argc, char **argv)
 
 	if (argc < 2)
 		return (fdf_error(USAGE));
-	if ((win.error_code = parse_map(&(win.map), argv)) != 0)
+	if ((win.error_code = parse_map(&win.map, argv)) != 0)
 		return (fdf_error(win.error_code));
+	ft_putnbr(win.map.h);
 	return (0);
 }

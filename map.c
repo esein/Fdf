@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 18:40:33 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/27 23:05:54 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/29 17:33:00 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int		check_file(struct s_map *map, int fd)
 	int		tmp;
 
 	map->tab = ft_memalloc(sizeof(int*));
-	map->tab[0] = NULL;
 	map->w = 0;
 	map->h = 0;
 	while (get_next_line(fd, &line))
@@ -28,9 +27,7 @@ int		check_file(struct s_map *map, int fd)
 		while (line[i] && line[i] != '\n')
 		{
 			if (NOSPACE(line, i) && (ft_isdigit(line[i]) == 0))
-			{
 				return (INVALID_MAP);
-			}
 			i++;
 		}
 		map->tab = ft_realloc(map->tab, sizeof(int*) * (map->h + 2),
@@ -38,9 +35,7 @@ int		check_file(struct s_map *map, int fd)
 		tmp = map->w;
 		map->w = ft_strsplit_atoi(&(map->tab[map->h]), line);
 		if (tmp != map->w && tmp != 0)
-		{
 			return (INVALID_MAP);
-		}
 		map->h++;
 	}
 	return (0);
