@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/20 10:31:37 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/27 16:29:29 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/29 18:12:26 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int		main()
 	int		x;
 	int		y;
 	int		size_line;
-//	struct s_pixel	pixel;
 	struct s_img	img;
 	union u_pixel	pixel;
 
@@ -34,7 +33,6 @@ int		main()
 		x = 100;
 		while (x < 150)
 		{
-		//	mlx_pixel_put(mlx, win, x, y, pixel.i);
 			put_pixel_to_img(&img, x, y, &pixel);
 			x++;
 		}

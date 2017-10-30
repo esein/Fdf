@@ -1,1 +1,2 @@
-affichage de l'image ok, doit mtn construire le squelette du programme.
+affichage et conversion en forme iso OK.
+doit comprendre comment trace un segment, refaire les coordonnees des pixels adjacents dans la fonction get_iso_point
