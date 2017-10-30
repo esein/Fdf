@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 14:27:39 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/30 02:45:35 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/30 19:44:38 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ typedef struct				s_img
 	void	*adr;
 	char	*data;
 	int		bpp;
-	int		size_line;
+	int		s_line;
 	int		endian;
 	int		h;
 	int		w;
+	int		x;
+	int		y;
 	t_color	color;
 }							t_img;
 
@@ -69,13 +71,13 @@ typedef struct				s_point
 	int				y;
 	int				rx;
 	int				ry;
-	int				dx;
-	int				dy;
+	int				ux;
+	int				uy;
 }							t_point;
 
 int		fdf_error(int error_code);
 
-int		put_pixel_to_img(t_img *img, int x, int y, t_color *color);
+int		put_pixel_to_img(t_img *img, int x, int y);
 
 int		parse_map(struct s_map *map, char **argv);
 
