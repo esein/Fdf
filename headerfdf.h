@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 14:27:39 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/30 19:44:38 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/11/01 04:21:39 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@
 #include "Libft/libft.h"
 #include "minilibx_macos/mlx.h"
 
-# define USAGE      1
-# define OPEN_ERROR 2
-# define INVALID_MAP  3
+# define USAGE       1
+# define OPEN_ERROR  2
+# define INVALID_MAP 3
+
+# define MLX_WHITE 0x00FFFFFF
+# define MLX_RED   0x00FF0000
+# define MLX_GREEN 0x0000FF00
+# define MLX_BLUE  0x000000FF
 
 typedef union				u_color
 {
@@ -33,6 +38,7 @@ typedef struct				s_map
 	int		**tab;
 	int		h;
 	int		w;
+	int		alt_max;
 }							t_map;
 
 typedef struct				s_img
@@ -75,10 +81,20 @@ typedef struct				s_point
 	int				uy;
 }							t_point;
 
-int		fdf_error(int error_code);
+int							init_win(t_win *win);
 
-int		put_pixel_to_img(t_img *img, int x, int y);
+int							fdf_error(int error_code);
 
-int		parse_map(struct s_map *map, char **argv);
+int							put_pixel_to_img(t_img *img, int x, int y);
+
+int							parse_map(struct s_map *map, char **argv);
+
+struct s_point				get_iso_point(t_win *win, int x, int y, int **tab);
+
+void						draw_up(t_win *win, t_point *point);
+
+void						draw_right(t_win *win, t_point *point);
+
+int							draw_wire(t_win *win, t_point *point, int x, int y);
 
 #endif

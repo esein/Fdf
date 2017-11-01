@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:34:36 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/31 00:06:54 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/11/01 03:46:54 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		put_pixel_to_img(t_img *img, int x, int y)
 {
-	if (x < 0 || x > img->w || y < 0 || y > img->h)
+	if (x <= 0 || x >= img->w || y <= 0 || y >= img->h)
 		return (0);
 	if (img->endian == 0)
 	{

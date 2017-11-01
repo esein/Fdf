@@ -6,7 +6,7 @@
 /*   By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/20 10:31:37 by gcadiou           #+#    #+#             */
-/*   Updated: 2017/10/29 18:12:26 by gcadiou          ###   ########.fr       */
+/*   Updated: 2017/10/31 23:30:23 by gcadiou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,23 @@ int		main()
 	int		y;
 	int		size_line;
 	struct s_img	img;
-	union u_pixel	pixel;
 
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, 400, 400, "mlx 42");
-	img.adr = mlx_new_image(mlx, 400, 400);
-	img.data = mlx_get_data_addr(img.adr, &(img.bpp), &(img.size_line), &(img.endian));
-	pixel.i = 0x00FFFFFF;
+	win = mlx_new_window(mlx, 1000, 1000, "mlx 42");
+	img.adr = mlx_new_image(mlx, 1000, 1000);
+	img.data = mlx_get_data_addr(img.adr, &(img.bpp), &(img.s_line), &(img.endian));
+	img.color.i = 0x00FFFFFF;
 	y = 50;
-	while (y < 150)
+	while (y < 750)
 	{
-		x = 100;
-		while (x < 150)
+		x = 50;
+		img.color.i = 0x00FFFFFF;
+		while (x < 750)
 		{
-			put_pixel_to_img(&img, x, y, &pixel);
+			put_pixel_to_img(&img, x, y);
+			img.color.tab[1]--;
+//			img.color.tab[2]++;
+			img.color.tab[0]--;
 			x++;
 		}
 		y++;

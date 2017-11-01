@@ -6,17 +6,17 @@
 #    By: gcadiou <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/29 17:33:43 by gcadiou           #+#    #+#              #
-#    Updated: 2017/10/30 00:36:03 by gcadiou          ###   ########.fr        #
+#    Updated: 2017/11/01 03:54:21 by gcadiou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fdf
 
-SRC = main.c   \
-	  map.c    \
-	  error.c  \
-	  image_mlx.c
-
+SRC = main.c      \
+	  map.c       \
+	  error.c     \
+	  image_mlx.c \
+	  calculs.c
 OBJ = $(SRC:.c=.o)
 
 PATHLIB = ./Libft
